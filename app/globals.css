@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink:        #0f0f0f;
+  --ink-2:      #3a3a3a;
+  --ink-3:      #787878;
+  --canvas:     #faf9f7;
+  --surface:    #ffffff;
+  --border:     #e8e5e0;
+  --border-dark:#d4d0ca;
+  --fire:       #e8440c;
+  --fire-light: #fff1ec;
+  --fire-mid:   #ffd4c4;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--fire-mid);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--canvas); }
+::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
+
+/* ─── Typography ─── */
+.font-display { font-family: 'Bricolage Grotesque', sans-serif; }
+.font-mono    { font-family: 'JetBrains Mono', monospace; }
+
+/* ─── Animations ─── */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.5s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.delay-50  { animation-delay: 50ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-350 { animation-delay: 350ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ─── Search Input ─── */
+.search-input {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--fire);
+  box-shadow: 0 0 0 3px rgba(232,68,12,0.12);
+}
+
+/* ─── Cards ─── */
+.tool-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-color: var(--border-dark);
+}
+
+/* ─── Answer block ─── */
+.answer-block {
+  background: linear-gradient(135deg, #fff8f5 0%, #ffffff 60%);
+  border-left: 3px solid var(--fire);
+}
+
+/* ─── Category badge colors ─── */
+.badge-video       { background:#fef2f2; color:#dc2626; border-color:#fecaca; }
+.badge-writing     { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
+.badge-design      { background:#faf5ff; color:#7c3aed; border-color:#e9d5ff; }
+.badge-coding      { background:#f0fdf4; color:#16a34a; border-color:#bbf7d0; }
+.badge-productivity{ background:#fffbeb; color:#d97706; border-color:#fde68a; }
+.badge-audio       { background:#fdf4ff; color:#a21caf; border-color:#f0abfc; }
+.badge-research    { background:#ecfeff; color:#0891b2; border-color:#a5f3fc; }
+.badge-marketing   { background:#fff7ed; color:#ea580c; border-color:#fed7aa; }
+
+/* ─── Affiliate CTA ─── */
+.btn-fire {
+  background: var(--fire);
+  color: #ffffff;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-fire:hover {
+  background: #cf3a09;
+  transform: translateY(-1px);
+}
+.btn-fire:active { transform: translateY(0); }
+
+/* ─── Divider line ─── */
+.divider { border-top: 1px solid var(--border); }
+
+/* ─── Question pill ─── */
+.q-pill {
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.q-pill:hover {
+  background: var(--fire-light);
+  border-color: var(--fire-mid);
+  color: var(--fire);
+}
