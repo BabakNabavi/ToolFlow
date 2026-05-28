@@ -127,3 +127,65 @@ body {
   border-color: var(--fire-mid);
   color: var(--fire);
 }
+
+/* ─── FAQ accordion ─── */
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+
+/* ─── Landing prose ─── */
+.prose-landing p { margin-bottom: 1rem; color: var(--ink-2); line-height: 1.75; }
+.prose-landing h2 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; color: var(--ink); margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; }
+.prose-landing h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; color: var(--ink); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; }
+.prose-landing ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+.prose-landing ul li { margin-bottom: 0.4rem; color: var(--ink-2); }
+
+/* ─── Trust badge ─── */
+.trust-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #f0fdf4; border: 1px solid #bbf7d0;
+  color: #15803d; border-radius: 999px;
+  font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  padding: 3px 10px; font-weight: 500;
+}
+
+/* ─── Highlight chip ─── */
+.highlight-chip {
+  background: var(--fire-light);
+  border: 1px solid var(--fire-mid);
+  color: var(--fire);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Mobile menu ─── */
+.mobile-menu-enter {
+  animation: slideDown 0.2s ease forwards;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Section divider ─── */
+.section-label {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+/* ─── Sticky TOC ─── */
+.toc-link { transition: color 0.15s ease; }
+.toc-link:hover { color: var(--fire); }
+.toc-link.active { color: var(--fire); font-weight: 600; }
