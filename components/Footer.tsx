@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Popular pages */}
+          {/* Popular guides */}
           <div>
             <div className="font-display font-semibold text-ink text-sm mb-4">Popular Guides</div>
             <div className="space-y-2.5 font-body">
@@ -74,11 +74,14 @@ export default function Footer() {
 }
 
 const FOOTER_GUIDES = [
-  { label: 'Best AI Tools for Students',   href: '/best-ai-tools-for-students' },
-  { label: 'Best AI Writing Tools',        href: '/best-ai-writing-tools' },
-  { label: 'AI Tools for Beginners',       href: '/ai-tools-for-beginners' },
-  { label: 'Create Videos with AI',        href: '/how-to-create-videos-with-ai' },
-  { label: 'Best AI Tools for Coding',     href: '/best-ai-tools-for-coding' },
+  { label: 'Best AI Tools for Students',    href: '/best-ai-tools-for-students' },
+  { label: 'Best AI Writing Tools',         href: '/best-ai-writing-tools' },
+  { label: 'AI Tools for Beginners',        href: '/ai-tools-for-beginners' },
+  { label: 'Create Videos with AI',         href: '/how-to-create-videos-with-ai' },
+  { label: 'Best AI Tools for Coding',      href: '/best-ai-tools-for-coding' },
+  { label: 'Best AI Tools for YouTube',     href: '/best-ai-tools-for-youtube' },
+  { label: 'Best Free AI Tools',            href: '/best-free-ai-tools' },
+  { label: 'AI Tools for Resumes',          href: '/ai-tools-for-resumes' },
 ]
 
 const FOOTER_CATS = [
