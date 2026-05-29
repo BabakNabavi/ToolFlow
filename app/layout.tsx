@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: 'ToolFlow',
     type: 'website',
-    url: 'https://toolflow.io',
+    url: 'https://ai-toolflow.com',
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-screen">
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
