@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { tools } from '@/data/tools'
 
-const BASE_URL = 'https://toolflow.io'
+const BASE_URL = 'https://ai-toolflow.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
