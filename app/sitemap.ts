@@ -35,20 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  // Search pages (high-value queries)
-  const searchPages: MetadataRoute.Sitemap = [
-    'writing', 'design', 'video', 'coding', 'productivity', 'audio', 'research',
-    'how+to+create+videos+with+AI',
-    'best+AI+tools+for+writing',
-    'best+AI+tools+for+students',
-    'best+free+AI+tools',
-    'best+AI+tools+for+beginners',
-  ].map(q => ({
-    url: `${BASE_URL}/search?q=${q}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }))
+  
 
-  return [...staticPages, ...categoryPages, ...toolPages, ...searchPages]
+  return [...staticPages, ...categoryPages, ...toolPages,]
 }

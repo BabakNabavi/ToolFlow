@@ -1,4 +1,6 @@
 {
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js"
+  "/about/page": "app/about/page.js",
+  "/best-ai-writing-tools/page": "app/best-ai-writing-tools/page.js",
+  "/best-ai-tools-for-students/page": "app/best-ai-tools-for-students/page.js"
 }
