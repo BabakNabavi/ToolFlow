@@ -31,14 +31,24 @@ function scoreEntry(entry: AnswerEntry, query: string): number {
 
 // Detect category from raw query
 const CATEGORY_SIGNALS: Record<ToolCategory, string[]> = {
-  video:        ['video','film','movie','animation','animate','youtube','tiktok','reel','clip','footage','explainer','record screen'],
-  writing:      ['write','writing','blog','article','essay','copy','content','email','grammar','proofread','seo','caption','script'],
-  design:       ['design','image','logo','art','illustration','graphic','banner','poster','thumbnail','ui','ux','visual','picture','photo','generate image','artwork'],
-  coding:       ['code','coding','programming','developer','software','app','website','debug','script','python','javascript','typescript','react'],
-  productivity: ['automate','automation','workflow','productivity','meeting','notes','organise','organize','task','schedule','calendar','summary'],
-  audio:        ['voice','audio','music','song','podcast','narration','voiceover','speech','sound','compose','beat','jingle'],
-  research:     ['research','search','find','facts','information','study','learn','citation','academic'],
-  marketing:    ['marketing','ads','advertising','social media','brand','growth','campaign','sales','lead'],
+  video:              ['video','film','movie','animation','animate','youtube','tiktok','reel','clip','footage','explainer','text to video'],
+  writing:            ['write','writing','blog','article','essay','copy','content','email','grammar','proofread','caption','script','paraphrase','rewrite'],
+  design:             ['design','logo','graphic','banner','poster','thumbnail','ui','ux','wireframe','mockup','prototype','branding'],
+  'image-generation': ['image','picture','photo','generate image','artwork','illustration','art','midjourney','stable diffusion','ai art'],
+  coding:             ['code','coding','programming','developer','software','debug','python','javascript','typescript','react','copilot'],
+  productivity:       ['productivity','meeting','notes','organize','task','schedule','calendar','summary','transcribe','transcription'],
+  audio:              ['audio','podcast','noise','sound','record','microphone','editing audio'],
+  music:              ['music','song','compose','beat','jingle','soundtrack','melody','royalty free music'],
+  voice:              ['voice','voiceover','narration','speech','tts','text to speech','voice clone'],
+  research:           ['research','facts','information','study','citation','academic','papers','pdf','summarize document'],
+  marketing:          ['marketing','advertising','campaign','brand','content marketing','digital marketing'],
+  seo:                ['seo','search engine','ranking','keyword','google ranking','content optimization'],
+  education:          ['education','learn','study','tutor','homework','student','language learning','course','flashcard','math'],
+  automation:         ['automation','automate','workflow','no-code','zapier','n8n','rpa','robotic process','web scraping'],
+  'customer-support': ['customer support','chatbot','helpdesk','live chat','customer service','support ticket'],
+  business:           ['business','presentation','pitch deck','meeting notes','office','microsoft','powerpoint','slides'],
+  sales:              ['sales','cold email','outreach','prospecting','crm','lead generation','sales call'],
+  'social-media':     ['social media','instagram','twitter','linkedin','tiktok','hashtag','social scheduling'],
 }
 
 function detectCategory(query: string): ToolCategory | null {
