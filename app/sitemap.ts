@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { tools } from '@/data/tools'
+import { tools, categories } from '@/data/tools'
 
 const BASE_URL = 'https://ai-toolflow.com'
 
@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL,                                      lastModified: now, changeFrequency: 'daily',   priority: 1.0 },
+    { url: `${BASE_URL}/search`,                          lastModified: now, changeFrequency: 'daily',   priority: 0.9 },
     { url: `${BASE_URL}/about`,                           lastModified: now, changeFrequency: 'monthly',  priority: 0.6 },
     { url: `${BASE_URL}/best-ai-tools-for-students`,      lastModified: now, changeFrequency: 'weekly',   priority: 0.9 },
     { url: `${BASE_URL}/best-ai-writing-tools`,           lastModified: now, changeFrequency: 'weekly',   priority: 0.9 },
@@ -19,14 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ai-tools-for-resumes`,            lastModified: now, changeFrequency: 'weekly',   priority: 0.9 },
   ]
 
-  const categoryPages: MetadataRoute.Sitemap = [
-    'video', 'writing', 'design', 'coding', 'productivity', 'audio',
-  ].map(cat => ({
-    url: `${BASE_URL}/category/${cat}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
+  const categoryPages: MetadataRoute.Sitemap = categories
+    .filter(c => c.id !== 'audio')
+    .map(cat => ({
+      url: `${BASE_URL}/category/${cat.id}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
 
   const toolPages: MetadataRoute.Sitemap = tools.map(tool => ({
     url: `${BASE_URL}/tool/${tool.slug}`,
