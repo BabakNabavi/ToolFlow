@@ -24,12 +24,23 @@ const POPULAR_QUESTIONS = [
 ]
 
 const CATEGORIES = [
-  { id: 'writing',      label: 'Writing',      icon: '✍️',  count: tools.filter(t=>t.category==='writing').length },
-  { id: 'design',       label: 'Design',       icon: '🎨',  count: tools.filter(t=>t.category==='design').length },
-  { id: 'video',        label: 'Video',        icon: '🎬',  count: tools.filter(t=>t.category==='video').length },
-  { id: 'coding',       label: 'Coding',       icon: '💻',  count: tools.filter(t=>t.category==='coding').length },
-  { id: 'productivity', label: 'Productivity', icon: '⚡',  count: tools.filter(t=>t.category==='productivity').length },
-  { id: 'audio',        label: 'Audio',        icon: '🎵',  count: tools.filter(t=>t.category==='audio').length },
+  { id: 'writing',          label: 'Writing',          icon: '✍️',  count: tools.filter(t=>t.category==='writing').length },
+  { id: 'coding',           label: 'Coding',           icon: '💻',  count: tools.filter(t=>t.category==='coding').length },
+  { id: 'design',           label: 'Design',           icon: '🎨',  count: tools.filter(t=>t.category==='design').length },
+  { id: 'image-generation', label: 'Image Gen',        icon: '🖼️',  count: tools.filter(t=>t.category==='image-generation').length },
+  { id: 'video',            label: 'Video',            icon: '🎬',  count: tools.filter(t=>t.category==='video').length },
+  { id: 'productivity',     label: 'Productivity',     icon: '⚡',  count: tools.filter(t=>t.category==='productivity').length },
+  { id: 'voice',            label: 'Voice & TTS',      icon: '🎙️',  count: tools.filter(t=>t.category==='voice').length },
+  { id: 'music',            label: 'Music',            icon: '🎵',  count: tools.filter(t=>t.category==='music').length },
+  { id: 'research',         label: 'Research',         icon: '🔍',  count: tools.filter(t=>t.category==='research').length },
+  { id: 'marketing',        label: 'Marketing',        icon: '📣',  count: tools.filter(t=>t.category==='marketing').length },
+  { id: 'seo',              label: 'SEO',              icon: '📈',  count: tools.filter(t=>t.category==='seo').length },
+  { id: 'education',        label: 'Education',        icon: '🎓',  count: tools.filter(t=>t.category==='education').length },
+  { id: 'automation',       label: 'Automation',       icon: '🤖',  count: tools.filter(t=>t.category==='automation').length },
+  { id: 'customer-support', label: 'Support',          icon: '💬',  count: tools.filter(t=>t.category==='customer-support').length },
+  { id: 'business',         label: 'Business',         icon: '💼',  count: tools.filter(t=>t.category==='business').length },
+  { id: 'sales',            label: 'Sales',            icon: '🎯',  count: tools.filter(t=>t.category==='sales').length },
+  { id: 'social-media',     label: 'Social Media',     icon: '📱',  count: tools.filter(t=>t.category==='social-media').length },
 ]
 
 export default function HomePage() {
@@ -89,7 +100,7 @@ export default function HomePage() {
       {/* ─── CATEGORIES ───────────────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="font-display font-bold text-ink text-xl mb-6">Browse by Category</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 gap-3">
           {CATEGORIES.map((cat, i) => (
             <Link
               key={cat.id}
